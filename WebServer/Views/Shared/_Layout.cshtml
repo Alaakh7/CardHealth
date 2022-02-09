@@ -1,0 +1,122 @@
+﻿@using Microsoft.AspNetCore.Http;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Health Card</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="layout" content="main"/>
+    
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/duotone.css" integrity="sha384-R3QzTxyukP03CMqKFe0ssp5wUvBPEyy9ZspCB+Y01fEjhMwcXixTyeot+S40+AjZ" crossorigin="anonymous"/>
+    <script src="~/js/jquery/jquery-1.8.2.min.js" type="text/javascript" ></script>
+    <link href="~/css/customize-template.css" type="text/css" media="screen, projection" rel="stylesheet" />
+
+    <style>
+    </style>
+</head>
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <button class="btn btn-navbar" data-toggle="collapse" data-target="#app-nav-top-bar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="dashboard.html" class="brand"><i class="icon-leaf">Control Panel</i></a>
+                     @if (Context.Session.GetInt32("Id").HasValue)
+                {
+                    <div id="app-nav-top-bar" class="nav-collapse">
+                        <ul class="nav pull-right">
+                            <li>
+                                <a href="login.html">Logout</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                 }
+            </div>
+            </div>
+        </div>
+        @if(Context.Session.GetInt32("Id").HasValue){
+        <div id="body-container">
+            <div id="body-content">
+                
+                    <div class="body-nav body-nav-horizontal body-nav-fixed">
+                        <div class="container">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-dashboard icon-large"></i> D1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-calendar icon-large"></i> D2
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-map-marker icon-large"></i> D3
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-tasks icon-large"></i> D4
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-cogs icon-large"></i> D5
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-list-alt icon-large"></i> D6
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-bar-chart icon-large"></i> D7
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                  
+                    }
+          <div>
+                        @RenderBody();
+                    </div>
+        <script src="~/js/bootstrap/bootstrap-transition.js" type="text/javascript" ></script>
+        <script src="~/js/bootstrap/bootstrap-alert.js" type="text/javascript" ></script>
+        <script src="~/js/bootstrap/bootstrap-modal.js" type="text/javascript" ></script>
+        <script src="~/js/bootstrap/bootstrap-dropdown.js" type="text/javascript" ></script>
+        <script src="~/js/bootstrap/bootstrap-scrollspy.js" type="text/javascript" ></script>
+        <script src="~/js/bootstrap/bootstrap-tab.js" type="text/javascript" ></script>
+        <script src="~/js/bootstrap/bootstrap-tooltip.js" type="text/javascript" ></script>
+        <script src="~/js/bootstrap/bootstrap-popover.js" type="text/javascript" ></script>
+        <script src="~/js/bootstrap/bootstrap-button.js" type="text/javascript" ></script>
+        <script src="~/js/bootstrap/bootstrap-collapse.js" type="text/javascript" ></script>
+        <script src="~/js/bootstrap/bootstrap-carousel.js" type="text/javascript" ></script>
+        <script src="~/js/bootstrap/bootstrap-typeahead.js" type="text/javascript" ></script>
+        <script src="~/js/bootstrap/bootstrap-affix.js" type="text/javascript" ></script>
+        <script src="~/js/bootstrap/bootstrap-datepicker.js" type="text/javascript" ></script>
+        <script src="~/js/jquery/jquery-tablesorter.js" type="text/javascript" ></script>
+        <script src="~/js/jquery/jquery-chosen.js" type="text/javascript" ></script>
+        <script src="~/js/jquery/virtual-tour.js" type="text/javascript" ></script>
+        <script type="text/javascript">
+        $(function() {
+            $('#sample-table').tablesorter();
+            $('#datepicker').datepicker();
+            $(".chosen").chosen();
+        });
+    </script>
+
+	</body>
+</html>
